@@ -40,7 +40,7 @@
       <p class="mt-3">Đã có tài khoản? <button type="button" class="btn btn-link" onclick="switchToLogin()">Đăng Nhập</button></p>
     </div>
 
-    <!-- Form đăng nhập -->
+  
     <div class="form-container" id="login-form-container">
       <h3>Đăng Nhập</h3>
       <form id="login-form">
@@ -59,24 +59,24 @@
   </div>
 
   <script>
-    // Hàm chuyển sang form đăng ký
+    
     function switchToRegister() {
       document.getElementById('login-form-container').classList.add('hide');
       setTimeout(() => {
         document.getElementById('login-form-container').style.display = 'none';
         document.getElementById('register-form-container').style.display = 'block';
         document.getElementById('register-form-container').classList.add('active');
-      }, 600); // Sau khi ẩn form đăng nhập, chuyển form đăng ký
+      }, 600); 
     }
 
-    // Hàm chuyển sang form đăng nhập
+    
     function switchToLogin() {
       document.getElementById('register-form-container').classList.add('hide');
       setTimeout(() => {
         document.getElementById('register-form-container').style.display = 'none';
         document.getElementById('login-form-container').style.display = 'block';
         document.getElementById('login-form-container').classList.add('active');
-      }, 600); // Sau khi ẩn form đăng ký, chuyển form đăng nhập
+      }, 600); 
     }
   </script>
   <script src="script.js"></script>
