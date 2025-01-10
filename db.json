@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "d539",
+      "username": "nguyendangkhoa",
+      "email": "khoandps40402@gmail.com",
+      "password": "Khoa05@"
+    },
+    {
+      "id": "9740",
+      "username": "dothanhcong",
+      "email": "cong@gmail.com",
+      "password": "Cong2005@"
+    },
+    {
+      "id": "b71c",
+      "username": "nguyendangkhoa",
+      "email": "khoa@gmail.com",
+      "password": "Khoa2005@"
+    },
+    {
+      "id": "36f4",
+      "username": "nguyendangkhoa",
+      "email": "khoa005@gmail.com",
+      "password": "Khoa005@"
+    }
+  ],
+  "students": [
+    {
+      "name": "Võ Đình Khải",
+      "age": 21,
+      "gender": "Nam",
+      "year": 2005,
+      "award": "Giỏi",
+      "class": "wd19304",
+      "id": "25a3"
+    }
+  ]
+}

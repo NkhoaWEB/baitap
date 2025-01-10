@@ -1,0 +1,252 @@
+/* Phần Cài đặt chung */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #e9eff1); /* Tạo nền gradient đẹp mắt */
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng nền chuyển động khi hover */
+body:hover {
+  background: linear-gradient(135deg, #e9eff1, #f0f4f8);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ sâu hơn */
+  padding: 40px;
+  transform: translateY(0);
+  opacity: 1;
+  animation: slideIn 0.8s ease-out;
+}
+
+/* Hiệu ứng slide-in cho các phần tử */
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Tiêu đề */
+h2, h3 {
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Tăng độ giãn cách giữa các ký tự */
+  animation: fadeIn 1s ease-out;
+}
+
+/* Hiệu ứng fade-in */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Bóng đổ mềm mại */
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Hiệu ứng phóng to và bóng đổ khi hover vào bảng */
+.table:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); 
+}
+
+/* Thêm hiệu ứng chuyển màu nền đẹp */
+.table th, .table td {
+  padding: 18px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Màu sắc đẹp mắt cho bảng */
+.table th {
+  background-color: #4f46e5; /* Màu xanh dương đậm */
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.table td {
+  background-color: #ffffff;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Hiệu ứng chuyển màu nền khi hover vào ô trong bảng */
+.table td:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-5px); /* Hiệu ứng nâng ô lên khi hover */
+}
+
+/* Hình ảnh sinh viên */
+.table img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+}
+
+/* Hiệu ứng phóng to và làm bóng khi hover */
+.table img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn {
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+  padding: 14px 24px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+/* Hiệu ứng cho nút bấm khi hover */
+.btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+/* Màu sắc các nút */
+.btn-success {
+  background-color: #38b000;
+  border-color: #38b000;
+}
+
+.btn-success:hover {
+  background-color: #28a745;
+}
+
+.btn-warning {
+  background-color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.btn-warning:hover {
+  background-color: #fbbf24;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  border-color: #ef4444;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+/* Form Styles */
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: formSlideIn 0.6s ease-out forwards;
+}
+
+/* Hiệu ứng trượt vào cho form */
+@keyframes formSlideIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Hiệu ứng input khi focus */
+.form-container .form-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.form-container input {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin: 12px 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.form-container input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6); /* Hiệu ứng ánh sáng xanh khi focus */
+  background-color: #ffffff;
+}
+
+/* Hiệu ứng nút trong form */
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+/* Hiệu ứng nút phóng to khi hover */
+.form-container button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+
+  .form-container {
+      max-width: 100%;
+  }
+}

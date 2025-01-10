@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Sinh Viên</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container my-4">
+    <h1 class="text-center">Danh Sách Sinh Viên</h1>
+    <button class="btn btn-success my-3" onclick="openModal()">Thêm Sinh Viên</button>
+    <table class="table table-bordered">
+      <thead class="table-primary">
+        <tr>
+          <th>#</th>
+          <th>Họ và Tên</th>
+          <th>Tuổi</th>
+          <th>Giới tính</th>
+          <th>Năm sinh</th>
+          <th>Danh hiệu</th>
+          <th>Lớp</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="student-table">
+        <!-- Dữ liệu sinh viên sẽ được hiển thị tại đây -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal Form -->
+  <div class="modal fade" id="studentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm/Sửa Sinh Viên</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="studentForm">
+            <input type="hidden" id="studentId">
+            <div class="mb-3">
+              <label for="studentName" class="form-label">Họ và Tên</label>
+              <input type="text" id="studentName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="studentAge" class="form-label">Tuổi</label>
+              <input type="number" id="studentAge" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="studentGender" class="form-label">Giới tính</label>
+              <select id="studentGender" class="form-select">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="studentYear" class="form-label">Năm sinh</label>
+              <input type="number" id="studentYear" class="form-control" min="2000" max="2010" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="studentAward" class="form-label">Danh hiệu</label>
+              <select id="studentAward" class="form-select" required>
+                <option value="Giỏi">Học Sinh Giỏi</option>
+                <option value="Khá">Học Sinh Khá</option>
+                <option value="Trung Bình">Học Sinh Trung Bình</option>
+                <option value="Yếu">Học Sinh Yếu</option>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <label for="studentClass" class="form-label">Lớp</label>
+              <input type="text" id="studentClass" class="form-control">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary" onclick="saveStudent()">Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="students.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
