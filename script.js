@@ -14,30 +14,28 @@ async function fetchData(url, options = {}) {
 
 // Đăng ký
 document.getElementById('register-form').addEventListener('submit', async function (e) {
-  e.preventDefault(); // Ngừng hành động mặc định của form
+  e.preventDefault();
 
   const username = document.getElementById('username').value.trim();
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
   const confirmPassword = document.getElementById('confirm-password').value.trim();
 
-  // Kiểm tra nếu có trường nào để trống
+  
   if (!username || !email || !password || !confirmPassword) {
     alert('Vui lòng điền đầy đủ tất cả các thông tin!');
     return;
   }
 
-  // Kiểm tra mật khẩu có khớp không
   if (password !== confirmPassword) {
     alert('Mật khẩu không khớp!');
     return;
   }
 
-  // Validation regex
-  const usernameRegex = /^[A-Za-z0-9]{4,}$/; // Tên người dùng có thể chứa chữ và số, dài tối thiểu 4 ký tự
+  
+  const usernameRegex = /^[A-Za-z0-9]{4,}$/; 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/; // Mật khẩu cần ít nhất 1 chữ hoa, 1 số, 1 ký tự đặc biệt
-
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/; 
   if (!usernameRegex.test(username)) {
     alert('Tên tài khoản phải dài hơn 4 ký tự và không chứa ký tự đặc biệt!');
     return;
@@ -52,14 +50,14 @@ document.getElementById('register-form').addEventListener('submit', async functi
   }
 
   try {
-    // Kiểm tra email đã tồn tại trong danh sách người dùng
-    const users = await fetchData(API_URL); // Lấy danh sách người dùng
+
+    const users = await fetchData(API_URL); 
     if (users.some(user => user.email === email)) {
       alert('Email này đã được đăng ký!');
       return;
     }
 
-    // Tạo người dùng mới
+    
     const newUser = { username, email, password };
     await fetchData(API_URL, {
       method: 'POST',
@@ -68,10 +66,10 @@ document.getElementById('register-form').addEventListener('submit', async functi
     });
 
     alert('Đăng ký thành công!');
-    document.getElementById('register-form').reset(); // Reset form sau khi đăng ký thành công
-    switchToLogin();  // Chuyển sang form đăng nhập
+    document.getElementById('register-form').reset(); 
+    switchToLogin();  
   } catch (error) {
-    console.error('Error occurred during registration:', error);  // In chi tiết lỗi
+    console.error('Error occurred during registration:', error);  
     alert('Có lỗi xảy ra khi đăng ký. Vui lòng thử lại.');
   }
 });
@@ -83,7 +81,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
   const username = document.getElementById('login-username').value.trim();
   const password = document.getElementById('login-password').value.trim();
 
-  // Kiểm tra nếu có trường nào để trống
+  
   if (!username || !password) {
     alert('Vui lòng điền đầy đủ tên và mật khẩu!');
     return;
@@ -95,7 +93,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
 
     if (user) {
       alert('Đăng nhập thành công! Chuyển đến trang chủ...');
-      window.location.href = 'homepage.html'; // Thay bằng URL trang chủ
+      window.location.href = 'homepage.html';
     } else {
       alert('Tên hoặc mật khẩu không đúng!');
     }
@@ -104,7 +102,7 @@ document.getElementById('login-form').addEventListener('submit', async function 
   }
 });
 
-// Chuyển giữa các form đăng ký và đăng nhập
+// Chuyển đổi giữa các form đăng ký và đăng nhập
 const container = document.querySelector('.container');
 const registerBtn = document.querySelector('.register-btn');
 const loginBtn = document.querySelector('.login-btn');

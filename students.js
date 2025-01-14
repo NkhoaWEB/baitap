@@ -1,6 +1,6 @@
 const STUDENTS_API_URL = 'http://localhost:3001/students';
 
-// Lấy danh sách sinh viên và hiển thị
+
 async function fetchStudents() {
   try {
     const response = await fetch(STUDENTS_API_URL);
@@ -12,7 +12,7 @@ async function fetchStudents() {
   }
 }
 
-// Hiển thị bảng sinh viên
+
 function renderTable(students) {
   const tableBody = document.getElementById('student-table');
   tableBody.innerHTML = students
@@ -33,18 +33,18 @@ function renderTable(students) {
     `).join('');
 }
 
-// Mở modal để sửa hoặc thêm sinh viên
+
 function openModalFromButton(button) {
   const student = JSON.parse(button.getAttribute('data-student'));
   openModal(student);
 }
 
-// Mở modal thêm hoặc sửa
+
 function openModal(student = {}) {
   const form = document.getElementById('studentForm');
   form.reset();
 
-  // Điền thông tin của sinh viên vào form
+ 
   Object.keys(student).forEach((key) => {
     const element = document.getElementById(`student${capitalizeFirstLetter(key)}`);
     if (element) {
@@ -52,15 +52,15 @@ function openModal(student = {}) {
     }
   });
 
-  // Đặt giá trị ID sinh viên vào trường ẩn
+
   document.getElementById('studentId').value = student.id || '';
 
-  // Hiển thị modal
+ 
   const modal = new bootstrap.Modal(document.getElementById('studentModal'));
   modal.show();
 }
 
-// Lưu sinh viên (thêm mới hoặc sửa)
+// Lưu sinh viên 
 async function saveStudent() {
   const student = {
     name: document.getElementById('studentName').value.trim(),
@@ -133,7 +133,7 @@ async function deleteStudentFromButton(button) {
   }
 }
 
-// Hàm để viết hoa chữ cái đầu tiên
+
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
